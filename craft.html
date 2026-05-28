@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craft - Noah Petermann</title>
+    <meta name="description" content="On craft versus taste, and why the answer isn't more - it's better.">
+    <meta name="color-scheme" content="dark light">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>N</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0a0a0a;
+            --text: #e8e8e8;
+            --muted: #888;
+            --link: #999;
+            --link-hover: #e8e8e8;
+            --sep: #444;
+            --toggle: #555;
+            --toggle-hover: #999;
+            --section-border: #222;
+        }
+
+        :root.light {
+            --bg: #f5f5f5;
+            --text: #111;
+            --muted: #666;
+            --link: #666;
+            --link-hover: #111;
+            --sep: #bbb;
+            --toggle: #aaa;
+            --toggle-hover: #666;
+            --section-border: #ddd;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s, color 0.3s;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        article {
+            max-width: 520px;
+            padding: 2rem;
+        }
+
+        .back {
+            display: inline-block;
+            font-size: 0.8rem;
+            color: var(--muted);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: color 0.2s;
+        }
+
+        .back:hover {
+            color: var(--text);
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .date {
+            font-size: 0.8rem;
+            color: var(--muted);
+            margin-bottom: 2rem;
+            transition: color 0.3s;
+        }
+
+        p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: var(--text);
+            text-decoration: underline;
+            text-decoration-color: var(--sep);
+            text-underline-offset: 2px;
+            transition: text-decoration-color 0.2s;
+        }
+
+        a:hover {
+            text-decoration-color: var(--text);
+        }
+
+        .footer {
+            border-top: 1px solid var(--section-border);
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 0.75rem;
+            color: var(--toggle);
+            transition: color 0.2s;
+            padding: 0;
+            line-height: 1;
+            vertical-align: baseline;
+        }
+
+        .toggle:hover {
+            color: var(--toggle-hover);
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <a href="/" class="back">&larr; back</a>
+
+        <h1>Craft</h1>
+        <p class="date">May 28, 2026</p>
+
+        <p>One word I've fallen in love with recently is <em>craft</em>. The funny thing is that the person who first introduced me to this concept - my cofounder <a href="https://hecker.vc" target="_blank" rel="noopener">Jan</a> - is not even using it nearly as frequently as me. You might have heard the concept I'm about to introduce described as "taste" as well. I prefer craft for a multitude of reasons, including but not limited to (excuse the legalese here) precision and learnability. In my definition, taste is something you're born with. It develops throughout your life - sure - but mostly it's like you're "gifted" with it (a concept I dislike as well, btw - but that's for another time). Craft, on the other hand, obviously also involves some talent - but first and foremost it is practice. It is almost being a perfectionist. It is simply a craft. Something I like to imagine is a goldsmith. They work tirelessly, until your ring or your cutlery is perfect. Tailor-made. Crafted.</p>
+
+        <p>Something I am reminded of over and over is that access to basically anything is not hard anymore. You can track down Jensen Huang if you follow his schedule close enough. You can DM Elon on X. You can scrape 200m phone numbers off Apollo. Your favourite frontier LLM will scrape their profile and create a "seemingly flawless" outreach. But everyone can do that. Disclaimer: I am aware that I'm talking from the perspective of someone very deeply inside a tech/LLM-savvy bubble - but for the sake of the thought I'm going to stick with it for a second.</p>
+
+        <p>So crafting good outreach matters more than ever. Crafting connections. Giving people something meaningful. It's easy to feel left behind. This is possibly more true than ever. But the answer is not (only) more - it is better. It is to make something your craft and perfect it.</p>
+
+        <p>I really love Bill Gates' notion of going <a href="https://www.gatesnotes.com/meet-bill/source-code/reader/my-first-memoir-source-code" target="_blank" rel="noopener">"hardcore"</a> &amp; the concept of the <a href="https://en.wikipedia.org/wiki/Outliers_(book)" target="_blank" rel="noopener">10,000 hour rule</a> (well - really deliberate practice, but more on that in the reading).</p>
+
+        <div class="footer">
+            <button class="toggle" onclick="toggleTheme()" aria-label="Toggle theme">light</button>
+        </div>
+    </article>
+    <script>
+        function applyTheme(mode) {
+            const btn = document.querySelector('.toggle');
+            if (mode === 'light') {
+                document.documentElement.classList.add('light');
+                btn.textContent = 'dark';
+            } else {
+                document.documentElement.classList.remove('light');
+                btn.textContent = 'light';
+            }
+        }
+
+        function toggleTheme() {
+            const isLight = document.documentElement.classList.contains('light');
+            const next = isLight ? 'dark' : 'light';
+            localStorage.setItem('theme', next);
+            applyTheme(next);
+        }
+
+        const saved = localStorage.getItem('theme');
+        if (saved) {
+            applyTheme(saved);
+        } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+            applyTheme('light');
+        }
+
+        window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                applyTheme(e.matches ? 'light' : 'dark');
+            }
+        });
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+</body>
+</html>
