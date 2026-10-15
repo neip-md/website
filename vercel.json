@@ -10,6 +10,16 @@
       "source": "/aniva",
       "destination": "https://anivahealth.com",
       "permanent": false
+    },
+    {
+      "source": "/tone-of-voice",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/craft",
+      "destination": "/",
+      "permanent": false
     }
   ],
   "rewrites": [
